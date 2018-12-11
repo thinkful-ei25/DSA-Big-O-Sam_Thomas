@@ -179,7 +179,7 @@ function fibonacci(n) {
   return fibonacci(n - 1) + fibonacci(n - 2);	
 }
 
-//O(n)
+//O(2^n)
 
 /*=================================================================================
 Exercise 9 - Anagrams
@@ -250,7 +250,7 @@ function traverse(animalHierarchy, parent) {
   return node;  
 }
 
-console.log(traverse(animalHierarchy, 'Animals'));
+//console.log(traverse(animalHierarchy, 'Animals'));
 
 //O(n!)
 
@@ -325,22 +325,30 @@ let organization = {
       }
     }}};
 
+let count2 =0;
 function traverseA(data, depth = 0) {
   let indent = ' '.repeat(depth * 4);
   Object.keys(data).forEach(key => {
+    count2++;
     console.log(indent + key);
     traverseA(data[key], depth + 1);
   });
 }
 
+let count =0;
 function traverseB(node, indent=0) {
   for (var key in node) {
+    count++;
     console.log(' '.repeat(indent), key);
     traverseB(node[key], indent + 4);
   }
 }
+traverseB(organization);
+console.log(count);
 
-
+traverseA(organization);
+console.log(count2);
+//O(n^k)
 
 
 function main(){

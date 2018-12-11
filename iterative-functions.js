@@ -13,8 +13,9 @@ function countSheepLoop(num){
     console.log(`counting sheeps ${i}`);
   }
 }
-countSheepLoop(10);
+//countSheepLoop(10);
 
+//O(n)
 
 /*====================================================================
 //Exercise 2: Take an array as input which contains an unknown set of numbers,
@@ -23,28 +24,40 @@ countSheepLoop(10);
 //error checking to make sure that the array you're given is valid input.
 //Editorial comment: Obviously arr.map() is the normal way to do this.
 */
+let count =0;
 function double_all(arr) {
   var ret = Array(arr.length);
   for (var i = 0; i < arr.length; ++i) {
+    count++;
     ret[i] = arr[i] * 2;
   }
   return ret;
 }
 let arr = [10,4,5,2,1];
-console.log(double_all(arr));
+//console.log(double_all(arr));
+//console.log(count);
+
+//O(n)
 
 /*====================================================================*/
 //Exercise 3: Take a string as input, reverse the string, and return the new
 //string.
 //Direct transformation of the tail-recursive form.
+let count1=0;
 function reverse_tail(str) {
   var accumulator = '';
   while (str !== '') {
+    count1++;
     accumulator = str[0] + accumulator;
     str = str.slice(1);
   }
   return accumulator;
 }
+
+//console.log(reverse_tail('test'));
+//console.log(count1);
+
+//O(n)
 
 /*====================================================================*/
 //Exercise 4: Calculates the nth triangular number.
@@ -56,6 +69,9 @@ function triangle(n) {
   }
   return tot;
 }
+
+//O(n)
+
 /*====================================================================*/
 //Exercise 5: Split a string based upon a separator (similar to
 //String.prototype.split).
@@ -73,24 +89,30 @@ function split(str, sep) {
   return ret;
 }
 
+//O(n)
+
 /*=================================================================================
 Exercise 6 - Binary Representation
 Write a recursive function that prints out the binary representation of a given number. 
 For example the program should take 3 as an input and print 11 as output, or 25 as an input 
 and print 11001 as an output. Note that the binary representation of 0 should be 0. 
 */
+let count2=0;
 function convertToBinaryIter(num){
   var binary = '';
   while(num>0){
+    count2++;
     let rem = Math.floor(num%2);
     binary = rem + binary;
     num = Math.floor(num/2);
   }
   return binary;
-
-
 }
-console.log(convertToBinaryIter(124)); //1111100
+
+//console.log(convertToBinaryIter(124349834984398)); //1111100
+//console.log(count2);
+
+//O(log(n))
 
 /*=================================================================================
 Exercise 7 - Factorial
@@ -105,7 +127,9 @@ function factorialIterative(number){
   }
   return fact;
 }
-console.log(factorialIterative(5));
+//console.log(factorialIterative(5));
+
+//O(n)
 
 /*=================================================================================
 Exercise 8 - Fibonacci
@@ -114,11 +138,14 @@ The fibonnaci sequence a series of numbers in which each number is the sum of th
 For example the 7th fibonacci number in a fibonaci sequence is  13. The sequence looks as follows: 1 1 2 3 5 8 13.
 */
 
+let count3=0;
+
 function fibonacciIterative(number){
   let num1 = 1;
   let num2 = 0;
   let fib = null;
   while(number > 0){
+    count3++;
     fib = num1;
     num1 = num1+num2;
     num2 = fib;
@@ -128,19 +155,29 @@ function fibonacciIterative(number){
 
 }
 
+//console.log(fibonacciIterative(10));
+//console.log(count3);
+
+//O(n)
+
 //print the whole sequence
 
 
 //******** ES6 makes it a bit easier*****
+let count4=0;
 function fibonacciIterative2(number){
   let [num1, num2] = [1,0];
   while(number-- > 0){
+    count4++;
     [num1, num2] = [num2+num1, num1];
   }
   return num2;
 
 }
-console.log(fibonacciIterative2(3));
+console.log(fibonacciIterative2(10));
+console.log(count4);
+
+//O(n)
 
 /*=================================================================================
 Exercise 9 - Anagram
