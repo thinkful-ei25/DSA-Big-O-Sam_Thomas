@@ -30,6 +30,9 @@ function countSheep(num){
     countSheep(num-1);
   }
 }
+
+//O(n)
+
 /*=================================================================================
 Exercise 2: Array Double
 Write a function that takes an array as input which contains an unknown set of numbers, 
@@ -44,6 +47,8 @@ function double_all(arr) {
   }
   return [arr[0] * 2, ...double_all(arr.slice(1))];
 }
+
+//O(n)
 
 /*=================================================================================
 Exercise 3 - Reverse String
@@ -60,6 +65,7 @@ function reverseString(str) {
   return reverseString(str.slice(1)) + str[0];
 }
 
+//O(n)
 
 /*=================================================================================
 Exercise 4 - Triangular Number
@@ -86,6 +92,8 @@ function triangle(n) {
   return n + triangle(n - 1);
 }
 
+//O(n)
+
 /*=================================================================================
 Exercise 5 - String Splitter
 Split a string based upon a separator (similar to String.prototype.split).
@@ -104,6 +112,8 @@ function split(str, sep) {
 //return (str.slice(0,idx) + (split(str.slice(idx + sep.length), sep)))
 //return str.slice(0,idx).concat(split(str.slice(idx + sep.length), sep))
 }
+
+//O(n)
 
 /*=================================================================================
 Exercise 6 - Binary Representation
@@ -124,6 +134,8 @@ function convertToBinary(num){
   }
 }
 
+//O(log(n))
+
 /*=================================================================================
 Exercise 7 - Factorial
 Write a recursive program that finds the factorial of a given number. 
@@ -141,6 +153,8 @@ function factorial(n) {
   // It will run for all other conditions except when n is equal to 0
   return n * factorial(n - 1);
 }
+
+//O(n)
 
 /*=================================================================================
 Exercise 8 - Fibonacci
@@ -164,6 +178,8 @@ function fibonacci(n) {
   // Recursive case
   return fibonacci(n - 1) + fibonacci(n - 2);	
 }
+
+//O(n)
 
 /*=================================================================================
 Exercise 9 - Anagrams
@@ -197,6 +213,17 @@ function printAnagram(word){
 
 }
 
+//const answer = printAnagram('write');
+//console.log(answer);
+
+//O(n!)
+
+//2, 2
+//3, 6
+//4, 24
+//5, 120
+//6, 720
+
 /* ==============================
 Exercise 10: Animal Hierarchy
 Step through the code and find the input to the program, input to each recursive calls, 
@@ -223,6 +250,9 @@ function traverse(animalHierarchy, parent) {
   return node;  
 }
 
+console.log(traverse(animalHierarchy, 'Animals'));
+
+//O(n!)
 
 /*=================================================================================*/
 /*
